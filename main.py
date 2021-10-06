@@ -2,9 +2,11 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
 
 if __name__ == '__main__':
-    f = open('C://Users//이종헌//Desktop//compiler//test.txt','r')
+
+    f = open(sys.argv[1],'r')
     keyword = {'if':'If', 'else':'Else', 'while':'While', 'break':'Break', 'continue':'Continue',
                 'return':'Return', '=':'Assign', ';':'Semicolon', '(':'LPar', ')':'RPar', '{':'LBrace',
                 '}':'RBrace', '+':'Plus', '*':'Mult', '/':'Div', '<':'Lt', '>':'Gt', '==':'Eq'}
@@ -23,7 +25,7 @@ if __name__ == '__main__':
             elif('(' in temp2):
                 temp2 = temp2[temp2.find('(')+1:]
                 # print("테스트용1:"+temp2)
-                print("LPar")
+                # print("LPar")
             elif(')' in temp2):
                 temp2 = temp2[:temp2.find(')')]
                 # print("테스트용2:" + temp2)
