@@ -30,7 +30,7 @@ if __name__ == '__main__':
                 temp2 = temp2[:temp2.find(')')]
                 # print("테스트용2:" + temp2)
                 rParFlag = 1
-            elif "==" in temp2:
+            elif "==" in temp2 and len(temp2)>=3:
                 temp2 = temp2[:len(temp2)-3]
                 print('Eq')
                 inputFlag = 1
