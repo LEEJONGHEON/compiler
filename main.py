@@ -63,6 +63,15 @@ if __name__ == '__main__':
             elif(temp2=="" and semiFlag==0 and rParFlag==0):
                 continue # space
                 inputFlag = 1
+            elif len(temp2)>=2:
+                m = p.search(temp2) # alphabet search
+                string = temp2[m.start():m.end()]
+                print("Ident(" + string + ")")
+                if "=" in temp2:
+                    print("Assign")
+                number = temp2[m.end()+1:]
+                print("Number("+number+")")
+
 
             if semiFlag:
                 print("Semicolon")
