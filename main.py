@@ -63,7 +63,7 @@ if __name__ == '__main__':
             elif(temp2=="" and semiFlag==0 and rParFlag==0):
                 continue # space
                 inputFlag = 1
-            elif len(temp2)>=2:
+            elif len(temp2)>=3 and "=" in temp2:
                 m = p.search(temp2) # alphabet search
                 string = temp2[m.start():m.end()]
                 print("Ident(" + string + ")")
