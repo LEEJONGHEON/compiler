@@ -41,6 +41,7 @@ if __name__ == '__main__':
 
             if (temp2 in keyword.keys()): # keword
                 print(keyword[temp2])
+
                 inputFlag = 1
             elif(temp2.isalpha()): #  aa , abc
                 print("Ident("+temp2+")")
@@ -59,7 +60,7 @@ if __name__ == '__main__':
                 else:
                     print("Ident("+temp2+")")
                 inputFlag = 1
-            elif(temp2=="" and semiFlag==0):
+            elif(temp2=="" and semiFlag==0 and rParFlag==0):
                 continue # space
                 inputFlag = 1
 
@@ -67,7 +68,8 @@ if __name__ == '__main__':
                 print("Semicolon")
                 semiFlag = 0
                 inputFlag = 1
-            elif rParFlag:
+
+            if rParFlag:
                 print("RPar")
                 rParFlag = 0
                 inputFlag = 1
