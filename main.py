@@ -15,47 +15,28 @@ if __name__ == '__main__':
     inputFlag = 0
     p = re.compile('[a-z]+')
     for line in f:
-        temp = line.split()
+        temp = line.split(' ')
+        # print(temp)
         for temp2 in temp:
-            if ';' in temp2:
-                if len(temp2)==1:
-                    print("Semicolon")
-                    continue
+            if(';' in temp2):
                 temp2 = temp2[:temp2.find(';')] # semicolon delete
                 semiFlag = 1 # semicolon flag on
                 # print("테스트입니다 : "+temp2)
-            elif '(' in temp2:
-                if len(temp2) == 1:
-                    print("LPar")
-                    continue
+            elif('(' in temp2):
                 temp2 = temp2[temp2.find('(')+1:]
+                # print("테스트용1:"+temp2)
                 print("LPar")
-            elif ')' in temp2:
-                if len(temp2) == 1:
-                    print("RPar")
-                    continue
+            elif(')' in temp2):
                 temp2 = temp2[:temp2.find(')')]
                 # print("테스트용2:" + temp2)
                 rParFlag = 1
             elif "==" in temp2 and len(temp2)>=3:
-                temp2 = temp2[:len(temp2)-2]
-                print("테스트 : "+temp2)
+                temp2 = temp2[:len(temp2)-3]
                 print('Eq')
                 inputFlag = 1
 
-            if '\n' in temp2:
-                if len(temp2)==1:
-                    continue
-                else: temp2 = temp2.replace("\n","")
-            if '\t' in temp2:
-                if len(temp2) == 1:
-                    continue
-                else: temp2 = temp2.replace("\t","")
-            if ' ' in temp2:
-                if len(temp2) == 1:
-                    continue
-                else: temp2 = temp2.replace(" ","")
-
+            if ('\n' in temp2):
+                temp2 = temp2[:temp2.find('\n')]
 
 
             if (temp2 in keyword.keys()): # keword
@@ -79,24 +60,6 @@ if __name__ == '__main__':
                 else:
                     print("Ident("+temp2+")")
                 inputFlag = 1
-            elif temp2[0].isalpha():
-                check = 0
-                for c in temp2:
-                    if c == "_" or c.isalpha() or c.isalnum(): check =1
-                    else: check=0
-                if check:
-                    print("Ident(" + temp2 + ")")
-                    inputFlag = 1
-            elif temp2[0]=="_":
-                check = 0
-                for c in temp2:
-                    if c == "_" or c.isalpha() or c.isalnum():
-                        check = 1
-                    else:
-                        check = 0
-                if check:
-                    print("Ident(" + temp2 + ")")
-                    inputFlag = 1
             elif(temp2=="" and semiFlag==0 and rParFlag==0):
                 continue # space
                 inputFlag = 1
@@ -125,10 +88,3 @@ if __name__ == '__main__':
                 # print(temp2)
                 exit(0)
             inputFlag = 0
-
-
-
-
-
-
-

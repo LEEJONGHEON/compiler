@@ -1,8 +1,1 @@
-===
-====
-123a123
-returna
-breakdown
-return
-a
--123
+{10};  putstr(
