@@ -38,7 +38,8 @@ if __name__ == '__main__':
                 # print("테스트용2:" + temp2)
                 rParFlag = 1
             elif "==" in temp2 and len(temp2)>=3:
-                temp2 = temp2[:len(temp2)-3]
+                temp2 = temp2[:len(temp2)-2]
+                print("테스트 : "+temp2)
                 print('Eq')
                 inputFlag = 1
 
