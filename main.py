@@ -16,19 +16,24 @@ if __name__ == '__main__':
     p = re.compile('[a-z]+')
     for line in f:
         temp = line.split()
-
         for temp2 in temp:
-            # print("테스트 : " + temp2)
-            # print(temp2)
             if ';' in temp2:
+                if len(temp2)==1:
+                    print("Semicolon")
+                    continue
                 temp2 = temp2[:temp2.find(';')] # semicolon delete
                 semiFlag = 1 # semicolon flag on
                 # print("테스트입니다 : "+temp2)
             elif '(' in temp2:
+                if len(temp2) == 1:
+                    print("LPar")
+                    continue
                 temp2 = temp2[temp2.find('(')+1:]
-                # print("테스트용1:"+temp2)
                 print("LPar")
             elif ')' in temp2:
+                if len(temp2) == 1:
+                    print("RPar")
+                    continue
                 temp2 = temp2[:temp2.find(')')]
                 # print("테스트용2:" + temp2)
                 rParFlag = 1
