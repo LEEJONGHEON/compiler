@@ -81,6 +81,16 @@ if __name__ == '__main__':
                 if check:
                     print("Ident(" + temp2 + ")")
                     inputFlag = 1
+            elif temp2[0]=="_":
+                check = 0
+                for c in temp2:
+                    if c == "_" or c.isalpha() or c.isalnum():
+                        check = 1
+                    else:
+                        check = 0
+                if check:
+                    print("Ident(" + temp2 + ")")
+                    inputFlag = 1
             elif(temp2=="" and semiFlag==0 and rParFlag==0):
                 continue # space
                 inputFlag = 1
